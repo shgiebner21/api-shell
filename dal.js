@@ -7,7 +7,7 @@ PouchDB.plugin(require('pouchdb-mapreduce'))
 const Cloudant = require('cloudant')
 const username = process.env.cloudant_username || 'nodejs'
 const password = process.env.cloudant_password
-const myURL = 'https://giebnar:@Coder~21@giebnar.cloudant.com'
+const myURL = process.env.CLOUDANT_URL
 const cloudant = Cloudant({url: myURL})
 const dbname = 'cpc'
 const db = cloudant.db.use(dbname)
